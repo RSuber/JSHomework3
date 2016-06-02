@@ -1,6 +1,6 @@
 var startoutput = 0
 var log =""
-var variable = { numbers: {add:"+",subtract:"-",multiply:"*"} }
+var variable = ("+"||"-"||"*"||"%")
 $('.one').on('click',function(){
   $('textarea').val(log = log + "1");
 })
@@ -41,15 +41,16 @@ $('div.minus').on('click',function(){
 })
 $('div.multiply').on('click',function(){
   $('textarea').val(log=log +"*");
-  $(startoutput=variable.add);
+  $(startoutput="*");
 })
 $('div.clear').on('click',function(){
   $('textarea').val(log= 0)
 })
 $('div.equals').on('click',function(){
   $('textarea').val(log = log.split(variable));
-  if (startoutput=variable.add){ $('textarea').val(log = parseInt(log[0]) + parseInt(log[1])) }
- //else if (startoutput){ $('textarea').val(log = parseInt(log[0]) - parseInt(log[1]))}
+  if (startoutput="+"){ $('textarea').val(log = parseInt(log[0]) + parseInt(log[1])) }
+ else if (startoutput="minus"){ $('textarea').val(log = parseInt(log[0]) + parseInt(log[1]))}
 })
+
 // Tried really hard to do this without copy and pasting code from the internet. I was able to get the calculator to add but for some
-//reason I couldnt get the equal button to subtract or multiply.
+//reason I couldnt get the equal button to subtract or multiply. 
